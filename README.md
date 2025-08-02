@@ -1,3 +1,4 @@
+<--Folder Structure -->
 auth_project_05/
 │
 ├── controllers/
@@ -57,3 +58,4 @@ auth_project_05/
 ├── package-lock.json
 ├── server.js
 └── README.md (optional but recommended)
+
