@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="/client/public/user/new.css">
+</head>
+<body>
+    <main class="product-listing-container">
+        <section class="search-sort-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for anything..." aria-label="Search products">
+                <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/4323e07cc7bd7eb02745fab5aad7022a0ce1be88?placeholderIfAbsent=true" alt="Search icon" class="search-icon">
+            </div>
+            <div class="sort-container">
+                <label class="sort-label">Sort by:</label>
+                <div class="dropdown-container">
+                    <select class="sort-dropdown" aria-label="Sort products by">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                    <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/7349968821516d1bb09dcce62cc3e73dea7e3e54?placeholderIfAbsent=true" alt="" class="dropdown-arrow">
+                </div>
+            </div>
+        </section>
+
+        <section class="filters-results-section">
+            <div class="active-filters">
+                <span class="filters-label">Active Filters:</span>
+                <div class="filter-tags">
+                    <div class="filter-tag">
+                        <span class="filter-text">Electronics Devices</span>
+                        <button class="remove-filter" aria-label="Remove Electronics Devices filter">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/486eea5e5bc68e12d50ae8270bf7f3bdeb6c6982?placeholderIfAbsent=true" alt="Remove filter">
+                        </button>
+                    </div>
+                    <div class="filter-tag">
+                        <span class="filter-text">5 Star Rating</span>
+                        <button class="remove-filter" aria-label="Remove 5 Star Rating filter">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/486eea5e5bc68e12d50ae8270bf7f3bdeb6c6982?placeholderIfAbsent=true" alt="Remove filter">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="results-count">
+                <span class="count-number">65,867</span>
+                <span class="count-text">Results found.</span>
+            </div>
+        </section>
+
+        <section class="products-grid">
+            <div class="product-row">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/5815fe0df64ea28d3c602651722ed1ae10236a43?placeholderIfAbsent=true" alt="TOZO T6 True Wireless Earbuds" class="product-image">
+                        <div class="product-badge hot-badge">
+                            <span>HOT</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(738)</span>
+                        </div>
+                        <h3 class="product-title">TOZO T6 True Wireless Earbuds Bluetooth Headphon...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$70</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/054362936f4e8719016fb0454ac448e209bdd60c?placeholderIfAbsent=true" alt="Samsung Electronics Samsung Galaxy S21 5G" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">536)</span>
+                        </div>
+                        <h3 class="product-title">Samsung Electronics Samsung Galexy S21 5G</h3>
+                        <div class="product-price">
+                            <span class="current-price">$2,300</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/dbed3b65990f981d4e4a4014373c0f9b3474d5ca?placeholderIfAbsent=true" alt="Amazon Basics High-Speed HDMI Cable" class="product-image">
+                        <div class="product-badge deals-badge">
+                            <span>BEST DEALS</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">423)</span>
+                        </div>
+                        <h3 class="product-title">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$360</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/ad26860433589ad90cee0cbcdb783ed55b44959c?placeholderIfAbsent=true" alt="Portable Washing Machine" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">816)</span>
+                        </div>
+                        <h3 class="product-title">Portable Wshing Machine, 11lbs capacity Model 18NMF...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$80</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="product-row">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/d53f539d2c348bb1a2219f0c219749216e88b6b1?placeholderIfAbsent=true" alt="Wired Over-Ear Gaming Headphones" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(647)</span>
+                        </div>
+                        <h3 class="product-title">Wired Over-Ear Gaming Headphones with USB</h3>
+                        <div class="product-price">
+                            <span class="current-price">$1,500</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/d6a77359fb6ffb63adf867233fca0e5c2d7ac157?placeholderIfAbsent=true" alt="Polaroid 57-Inch Photo/Video Tripod" class="product-image">
+                        <div class="product-badge discount-badge">
+                            <span>25% OFF</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(877)</span>
+                        </div>
+                        <h3 class="product-title">Polaroid 57-Inch Photo/Video Tripod with Deluxe Tripod Ca...</h3>
+                        <div class="product-price">
+                            <span class="original-price">$1600</span>
+                            <span class="current-price">$1,200</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card featured-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/3d4b89bac9c4e05e4b283bbfcc24ddc07d0f88fb?placeholderIfAbsent=true" alt="Dell Optiplex 7000x7480 All-in-One Computer Monitor" class="product-image">
+                        <div class="product-actions">
+                            <button class="action-button" aria-label="Add to wishlist">
+                                <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/b8d6d8bb95e4d826d5b03bef31b5bfa821ba15b4?placeholderIfAbsent=true" alt="Wishlist">
+                            </button>
+                            <button class="action-button" aria-label="Quick view">
+                                <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/91ef1ae24185edb45c397864945e5894cf23eee2?placeholderIfAbsent=true" alt="Quick view">
+                            </button>
+                            <button class="action-button primary-action" aria-label="Add to cart">
+                                <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1785bc8594f3383b20fcdad2f0907a9b61e1978e?placeholderIfAbsent=true" alt="Add to cart">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(426)</span>
+                        </div>
+                        <h3 class="product-title">Dell Optiplex 7000x7480 All-in-One Computer Monitor</h3>
+                        <div class="product-price">
+                            <span class="current-price">$250</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/91b4f8ecbf42475f20593645bc1257d5e6434cf3?placeholderIfAbsent=true" alt="4K UHD LED Smart TV" class="product-image">
+                        <div class="product-badge sale-badge">
+                            <span>SALE</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(583)</span>
+                        </div>
+                        <h3 class="product-title">4K UHD LED Smart TV with Chromecast Built-in</h3>
+                        <div class="product-price">
+                            <span class="current-price">$220</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="product-row">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/20f119a18a134297da5978ddb69deca2da7c5e23?placeholderIfAbsent=true" alt="Amazon Basics High-Speed HDMI Cable" class="product-image">
+                        <div class="product-badge deals-badge">
+                            <span>BEST DEALS</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(994)</span>
+                        </div>
+                        <h3 class="product-title">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$360</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/ad26860433589ad90cee0cbcdb783ed55b44959c?placeholderIfAbsent=true" alt="Portable Washing Machine" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(798)</span>
+                        </div>
+                        <h3 class="product-title">Portable Wshing Machine, 11lbs capacity Model 18NMF...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$80</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/aa2435ad7db3f9eee98009879b2e3173ac343cc1?placeholderIfAbsent=true" alt="TOZO T6 True Wireless Earbuds" class="product-image">
+                        <div class="product-badge hot-badge">
+                            <span>HOT</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(600)</span>
+                        </div>
+                        <h3 class="product-title">TOZO T6 True Wireless Earbuds Bluetooth Headphon...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$70</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/64ac50067a2e2662bbada63959edc4112db75948?placeholderIfAbsent=true" alt="Dell Optiplex 7000x7480 All-in-One Computer Monitor" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(492)</span>
+                        </div>
+                        <h3 class="product-title">Dell Optiplex 7000x7480 All-in-One Computer Monitor</h3>
+                        <div class="product-price">
+                            <span class="current-price">$250</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="product-row">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/d4283f75201efb11275be1c8d0b78de816324760?placeholderIfAbsent=true" alt="Samsung Electronics Samsung Galaxy S21 5G" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(740)</span>
+                        </div>
+                        <h3 class="product-title">Samsung Electronics Samsung Galexy S21 5G</h3>
+                        <div class="product-price">
+                            <span class="current-price">$2,300</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/cd1b11297784a48b761f7060329c2c7c30bcc09c?placeholderIfAbsent=true" alt="4K UHD LED Smart TV" class="product-image">
+                        <div class="product-badge sale-badge">
+                            <span>SALE</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(556)</span>
+                        </div>
+                        <h3 class="product-title">4K UHD LED Smart TV with Chromecast Built-in</h3>
+                        <div class="product-price">
+                            <span class="current-price">$220</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/24fb63b3aeafc5f475fabd92078ce11549a89ee9?placeholderIfAbsent=true" alt="Wired Over-Ear Gaming Headphones" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(536)</span>
+                        </div>
+                        <h3 class="product-title">Wired Over-Ear Gaming Headphones with USB</h3>
+                        <div class="product-price">
+                            <span class="current-price">$1,500</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/d8b362925a18e1e7781ce0a5ea7095aba76cb59e?placeholderIfAbsent=true" alt="Polaroid 57-Inch Photo/Video Tripod" class="product-image">
+                        <div class="product-badge discount-badge">
+                            <span>25% OFF</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(423)</span>
+                        </div>
+                        <h3 class="product-title">Polaroid 57-Inch Photo/Video Tripod with Deluxe Tripod Ca...</h3>
+                        <div class="product-price">
+                            <span class="original-price">$1600</span>
+                            <span class="current-price">$1,200</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="product-row">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/730f9a388e4dbee49525c0f586ff9750a7b3addc?placeholderIfAbsent=true" alt="TOZO T6 True Wireless Earbuds" class="product-image">
+                        <div class="product-badge hot-badge">
+                            <span>HOT</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(738)</span>
+                        </div>
+                        <h3 class="product-title">TOZO T6 True Wireless Earbuds Bluetooth Headphon...</h3>
+                        <div class="product-price">
+                            <span class="original-price">$75</span>
+                            <span class="current-price">$70</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/054362936f4e8719016fb0454ac448e209bdd60c?placeholderIfAbsent=true" alt="Samsung Electronics Samsung Galaxy S21 5G" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">536)</span>
+                        </div>
+                        <h3 class="product-title">Samsung Electronics Samsung Galexy S21 5G</h3>
+                        <div class="product-price">
+                            <span class="current-price">$2,300</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/b0cd74007cacc10903c5e6644b9c6b0a7fa78190?placeholderIfAbsent=true" alt="Amazon Basics High-Speed HDMI Cable" class="product-image">
+                        <div class="product-badge deals-badge">
+                            <span>BEST DEALS</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">423)</span>
+                        </div>
+                        <h3 class="product-title">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$360</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/ad26860433589ad90cee0cbcdb783ed55b44959c?placeholderIfAbsent=true" alt="Portable Washing Machine" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">816)</span>
+                        </div>
+                        <h3 class="product-title">Portable Wshing Machine, 11lbs capacity Model 18NMF...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$80</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="product-row">
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/49a3429bbf1bafa65b18acee17d5484cfba8fab6?placeholderIfAbsent=true" alt="Amazon Basics High-Speed HDMI Cable" class="product-image">
+                        <div class="product-badge deals-badge">
+                            <span>BEST DEALS</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/1afc49b764d063da29f32f69b48c5da1fc977c24?placeholderIfAbsent=true" alt="4 star rating" class="rating-stars">
+                            <span class="rating-count">(994)</span>
+                        </div>
+                        <h3 class="product-title">Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$360</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/92969f8c1a17497076c6b6fbac2c1f6d00264190?placeholderIfAbsent=true" alt="Dell Optiplex 7000x7480 All-in-One Computer Monitor" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(492)</span>
+                        </div>
+                        <h3 class="product-title">Dell Optiplex 7000x7480 All-in-One Computer Monitor</h3>
+                        <div class="product-price">
+                            <span class="current-price">$250</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/31b220ea4819ecb5261f68163fc44cf643c44426?placeholderIfAbsent=true" alt="Portable Washing Machine" class="product-image">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(798)</span>
+                        </div>
+                        <h3 class="product-title">Portable Wshing Machine, 11lbs capacity Model 18NMF...</h3>
+                        <div class="product-price">
+                            <span class="original-price">$124</span>
+                            <span class="current-price">$80</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/2099f9f24c7afd9fa1860e1917aeb14b0728a843?placeholderIfAbsent=true" alt="TOZO T6 True Wireless Earbuds" class="product-image">
+                        <div class="product-badge hot-badge">
+                            <span>HOT</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-rating">
+                            <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/e7a084fefff1eba837ec78c0d4c90d141c258ad5?placeholderIfAbsent=true" alt="5 star rating" class="rating-stars">
+                            <span class="rating-count">(600)</span>
+                        </div>
+                        <h3 class="product-title">TOZO T6 True Wireless Earbuds Bluetooth Headphon...</h3>
+                        <div class="product-price">
+                            <span class="current-price">$70</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <nav class="pagination-container" aria-label="Product pagination">
+            <button class="pagination-arrow" aria-label="Previous page">
+                <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/6ab4ee718594b892e40521a6263a2b6df74b2372?placeholderIfAbsent=true" alt="Previous">
+            </button>
+            <div class="pagination-pages">
+                <button class="pagination-page active" aria-label="Page 1" aria-current="page">01</button>
+                <button class="pagination-page" aria-label="Page 2">02</button>
+                <button class="pagination-page" aria-label="Page 3">03</button>
+                <button class="pagination-page" aria-label="Page 4">04</button>
+                <button class="pagination-page" aria-label="Page 5">05</button>
+                <button class="pagination-page" aria-label="Page 6">06</button>
+            </div>
+            <button class="pagination-arrow" aria-label="Next page">
+                <img src="https://api.builder.io/api/v1/image/assets/004e4450591a48beaa8768a3401487db/f99ac187c0efe61e6735b170d05eb181d23ae93c?placeholderIfAbsent=true" alt="Next">
+            </button>
+        </nav>
+    </main>
+</body>
+</html>

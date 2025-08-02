@@ -1,0 +1,170 @@
+/* client/public/user/cart.css */
+body {
+  font-family: Arial;
+  background: #f7f7f7;
+  padding: 20px;
+}
+.cart-container {
+  background: white;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.cart-summary {
+  margin-top: 20px;
+  text-align: right;
+}
+button {
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+input[type="number"] {
+  width: 50px;
+  text-align: center;
+}
+/* client/public/user/cart.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 2rem;
+}
+
+.cart-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background: #eee;
+  padding: 10px;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  align-items: center;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004c99;
+}
+
+/* Product image container with fixed aspect ratio */
+.product-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Creates a 1:1 square aspect ratio */
+  overflow: hidden;
+}
+
+/* Image styling to maintain aspect ratio */
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill container while maintaining aspect ratio */
+  object-position: center; /* Centers the image within the container */
+}
+
+/* Optional: Different aspect ratios */
+.product-image-container.ratio-16-9 {
+  padding-top: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+}
+
+.product-image-container.ratio-4-3 {
+  padding-top: 75%; /* 4:3 aspect ratio (3/4 = 0.75) */
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+.checkout-form {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 1rem;
+  max-width: 300px;
+}
+.checkout-form input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.checkout-form button {
+  margin-right: 0.5rem;
+}
+.checkout-form {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 1rem;
+  max-width: 300px;
+}
+.checkout-form input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.checkout-form button {
+  margin-right: 0.5rem;
+}

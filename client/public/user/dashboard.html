@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Product Listing</title>
+    <link rel="stylesheet" href="/client/public/user/dashboard_user.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="user-actions">
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+            <a href="/client/public/user/cart.html" class="cart-link">View Cart</a>
+        </div>
+    </header>
+
+    <main class="product-listing-container">
+        <section class="search-sort-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for products..." aria-label="Search products">
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+            <div class="sort-container">
+                <label class="sort-label">Sort by:</label>
+                <div class="dropdown-container">
+                    <select id="sortSelect" class="sort-dropdown" aria-label="Sort products by">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest Arrivals</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="filters-results-section">
+            <div class="active-filters">
+                <span class="filters-label">Active Filters:</span>
+                <div id="filterTags" class="filter-tags">
+                    <!-- Filters will be added dynamically -->
+                </div>
+            </div>
+            <div class="results-count">
+                <span id="resultsCount" class="count-number">0</span>
+                <span class="count-text">Products found</span>
+            </div>
+        </section>
+
+        <section class="products-grid" id="productContainer">
+            <!-- Products will be loaded dynamically here -->
+        </section>
+
+        <nav class="pagination-container" aria-label="Product pagination">
+            <button id="prevPage" class="pagination-arrow" aria-label="Previous page">
+                &lt;
+            </button>
+            <div id="paginationPages" class="pagination-pages">
+                <!-- Pages will be added dynamically -->
+            </div>
+            <button id="nextPage" class="pagination-arrow" aria-label="Next page">
+                &gt;
+            </button>
+        </nav>
+    </main>
+
+    <script src="/client/public/js/new.js"></script>
+</body>
+</html>

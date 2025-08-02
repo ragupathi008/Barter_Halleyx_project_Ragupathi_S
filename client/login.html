@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login In</title>
+  <link rel="stylesheet" href="/src/assests/login.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2>Sign In With</h2>
+      <div class="social-buttons">
+        <button class="facebook-btn">
+  <span class="facebook-icon">
+    <svg width="20" height="20" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+      <path fill="white" d="M279.14 288l14.22-92.66h-88.91V127.9c0-25.35 
+      12.42-50.06 52.24-50.06h40.42V6.26S270.43 0 240.33 
+      0c-73.11 0-121 44.38-121 124.72v70.62H89.09V288h30.24v224h92.65V288z"/>
+    </svg>
+  </span>
+  <span>Sign in with Facebook</span>
+</button>
+        <button class="google-btn">
+  <span class="google-icon">
+    <svg width="20" height="20" viewBox="0 0 48 48">
+      <path fill="#EA4335" d="M24 9.5c3.2 0 5.7 1.4 7 2.5l5.2-5.2C33.1 3.5 28.8 1.5 24 1.5 14.6 1.5 6.9 7.9 3.8 16.1l6.3 4.9C11.5 14.3 17.3 9.5 24 9.5z"/>
+      <path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.4h12.6c-.2 2.2-1.5 5.4-4.3 7.5l6.6 5.1c3.9-3.5 6.2-8.6 6.2-16.1z"/>
+      <path fill="#FBBC05" d="M10.1 28.1c-.5-1.6-.8-3.2-.8-4.9s.3-3.3.8-4.9l-6.3-4.9C2.6 16.3 1.5 20 1.5 23.2s1.1 6.9 2.3 9.9l6.3-5z"/>
+      <path fill="#34A853" d="M24 46.5c6.5 0 11.9-2.1 15.8-5.7l-6.6-5.1c-2 1.4-4.6 2.2-9.2 2.2-6.7 0-12.5-4.9-14.5-11.6l-6.3 5C6.9 40.1 14.6 46.5 24 46.5z"/>
+      <path fill="none" d="M0 0h48v48H0z"/>
+    </svg>
+  </span>
+  <span>Sign in with Google</span>
+</button>
+      </div>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" id="email" required />
+          <span class="error-icon" id="emailError">❗</span>
+        </div>
+
+        <div class="input-group">
+          <label>Password <a href="#" class="forgot">Forgot?</a></label>
+          <input type="password" id="password" required />
+          <span class="error-icon" id="passwordError">❗</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Sign In</button>
+      </form>
+
+      <p class="signup-text">Not a member? <a href="signup.html">Sign up now</a></p>
+    </div>
+  </div>
+  <script src="./js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,697 @@
+/* Base Styles */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary: #3f37c9;
+  --accent: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+
+/* .hidden { display: none; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f2f2f2; cursor: pointer; }
+    .modal { background-color: #fff; border: 1px solid #ccc; padding: 20px; max-width: 400px; margin-top: 20px; }
+    input, button { padding: 8px; margin: 5px 0; width: 100%; } */
+
+
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    line-height: normal;
+    width: 25%;
+    margin-left: 0;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.sidebar-content {
+    background-color: rgba(30, 41, 59, 1);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    color: rgba(226, 232, 240, 1);
+    min-height: 100vh;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 40px 32px;
+    font: 500 16px Inter, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .sidebar-content {
+        min-height: auto;
+        padding: 0 20px 40px;
+    }
+}
+
+
+/* User profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(51, 65, 85, 1);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(71, 85, 105, 1);
+    width: 100%;
+}
+
+.profile-avatar {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    width: 56px;
+    border-radius: 50%;
+    height: 56px;
+    flex-shrink: 0;
+    border: 3px solid rgba(99, 102, 241, 1);
+    overflow: hidden;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+}
+
+.user-role {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(148, 163, 184, 1);
+}
+.hidden {
+  display: none;
+}
+
+#modalForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 1000;
+}
+
+#message {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+#message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+#message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+
+/* view modal data */
+/* Minimalist Modal Styling */
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.product-image-container {
+  width: 100%;
+  height: 200px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-details {
+  padding: 0 10px;
+}
+
+.product-details h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+}
+
+.product-details p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+/* Minimalist form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-save {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* View Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-btn{
+  cursor: pointer;
+}
+/* Button Styles */
+/* Action buttons container */
+td:last-child {
+  white-space: nowrap; /* Prevent buttons from wrapping */
+  padding: 0.75rem 0.5rem !important; /* Adjust cell padding */
+}
+
+/* Base button styles */
+.btn-view, 
+.btn-edit, 
+.btn-delete {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin: 0 0.25rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Button colors */
+.btn-view {
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.btn-edit {
+  background-color: #4e73df;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #e74a3b;
+  color: white;
+}
+
+/* Hover states */
+.btn-view:hover {
+  background-color: #dde0e3;
+  transform: translateY(-1px);
+}
+
+.btn-edit:hover {
+  background-color: #3d5ec2;
+  transform: translateY(-1px);
+}
+
+.btn-delete:hover {
+  background-color: #d23a2b;
+  transform: translateY(-1px);
+}
+
+/* Focus states */
+.btn-view:focus, 
+.btn-edit:focus, 
+.btn-delete:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+/* Active states */
+.btn-view:active, 
+.btn-edit:active, 
+.btn-delete:active {
+  transform: translateY(0);
+}
+
+/* Icon support (if you add icons later) */
+.btn-view i, 
+.btn-edit i, 
+.btn-delete i {
+  margin-right: 0.3rem;
+  font-size: 0.9em;
+}
+/* Modal close button styling */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #f44336;
+}
+
+/* Modal background click area */
+/* #viewModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+#viewModal.hidden {
+  display: none;
+} */
+ #viewModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--dark);
+}
+
+.modal-body {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.product-image-container {
+  flex: 1;
+}
+
+.product-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  background-color: var(--light-gray);
+}
+
+.product-details {
+  flex: 2;
+}
+
+.product-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.product-details p {
+  margin-bottom: 0.75rem;
+}
+
+.product-details strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* Layout Styles */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.layout-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Fixed Sidebar */
+.sidebar {
+    width: 280px;
+    min-width: 280px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    background-color: rgba(30, 41, 59, 1);
+    z-index: 100;
+}
+
+/* Scrollable Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #f4f6f8;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Action Bar */
+/* Search and Add Button */
+#searchInput {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  width: 300px;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+#addProductBtn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .layout-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .main-content {
+        height: auto;
+    }
+}
+
+
+/* Product Table */
+#productTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+@media (max-width: 768px) {
+  #productTable {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+#productTable thead {
+  background-color: var(--primary);
+  color: white;
+}
+
+#productTable th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+#productTable td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+#productTable tr:last-child td {
+  border-bottom: none;
+}
+
+#productTable tbody tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+/* Form Styles */
+#productForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#productForm input,
+#productForm textarea,
+#productForm select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+#productForm input:focus,
+#productForm textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+#productForm textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-save {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-save:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-cancel {
+  background-color: var(--light-gray);
+  color: var(--dark);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-cancel:hover {
+  background-color: #d1d7e0;
+}

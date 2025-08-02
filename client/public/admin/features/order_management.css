@@ -1,0 +1,167 @@
+/* Order Management Header */
+.main-content header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.main-content header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Search and Filter Row */
+.search-filter {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#orderSearch,
+#statusFilter {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  min-width: 250px;
+  background-color: #fff;
+  color: #333;
+}
+
+#orderSearch::placeholder {
+  color: #888;
+}
+
+#orderSearch:focus,
+#statusFilter:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* Orders Table */
+#ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+#ordersTable thead {
+  background-color: #4361ee;
+  color: white;
+}
+
+#ordersTable th,
+#ordersTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1rem;
+  color: #333;
+}
+
+#ordersTable th {
+  font-weight: 600;
+}
+
+#ordersTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#ordersTable tbody tr:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+/* Actions Column Styling */
+#ordersTable td:last-child {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Action Buttons */
+.orders-container .btn-edit,
+.orders-container .btn-delete,
+.orders-container .btn-view {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.orders-container .btn-edit {
+  background-color: #4361ee;
+  color: white;
+}
+
+.orders-container .btn-edit:hover {
+  background-color: #3b55d1;
+}
+
+.orders-container .btn-delete {
+  background-color: #e63946;
+  color: white;
+}
+
+.orders-container .btn-delete:hover {
+  background-color: #d62839;
+}
+
+.orders-container .btn-view {
+  background-color: #f1f3f5;
+  color: #333;
+}
+
+.orders-container .btn-view:hover {
+  background-color: #dee2e6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #ordersTable,
+  #ordersTable thead,
+  #ordersTable tbody,
+  #ordersTable th,
+  #ordersTable td,
+  #ordersTable tr {
+    display: block;
+  }
+
+  #ordersTable thead {
+    display: none;
+  }
+
+  #ordersTable tr {
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  #ordersTable td {
+    padding: 0.75rem 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+  }
+
+  #ordersTable td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 40%;
+    color: #555;
+  }
+}

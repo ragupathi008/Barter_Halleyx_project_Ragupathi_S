@@ -1,0 +1,43 @@
+<!-- client/public/user/cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="/client/public/user/cart.css" />
+</head>
+<body>
+  <div class="cart-container">
+    <h2>Your Cart </h2>
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+            <th>name</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cartBody">
+        <!-- Filled by JS -->
+      </tbody>
+    </table>
+    <div class="payment-section">
+  <h3>Select Payment Method</h3>
+  <label><input type="radio" name="payment" value="Cash on Delivery" checked /> Cash on Delivery</label><br>
+  <label><input type="radio" name="payment" value="Google Pay" /> Google Pay</label>
+</div>
+    <div class="cart-summary">
+      <strong>Total: ₹<span id="totalPrice">0</span></strong>
+      <button onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- ✅ Use relative path if cart.js is in same folder -->
+   <!-- Load scripts in correct order -->
+<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+<script src="/client/public/js/cart.js"></script>
+</body>
+</html>
