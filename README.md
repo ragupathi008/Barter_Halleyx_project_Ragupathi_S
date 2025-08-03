@@ -2,10 +2,7 @@ project video link ==>
 [https://youtu.be/z5kUKQl3kHI](https://www.youtube.com/watch?v=z5kUKQl3kHI)
 
 project database video link ==>
-[https://youtu.be/z5kUKQl3kHI](https://www.youtube.com/watch?v=gagXGw2XGyI)
-
-
-
+[https://youtu.be/gagXGw2XGyI](https://www.youtube.com/watch?v=gagXGw2XGyI)
 
 
 
