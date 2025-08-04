@@ -233,7 +233,7 @@ function setupEventListeners() {
     document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
-        window.location.href = '/client/public/user/login.html';
+        window.location.href = '/client/public/login.html';
     });
     
     // Event delegation for dynamic elements (cart and wishlist buttons)

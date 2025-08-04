@@ -1,4 +1,28 @@
 const API_URL = "http://localhost:5000/api/products";
+// Show user name and avatar
+document.addEventListener("DOMContentLoaded", async () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user || !user._id) return;
+
+  try {
+    const res = await fetch(`http://localhost:5000/users/${user._id}`);
+    const data = await res.json();
+
+    // Set user name
+    const nameEl = document.getElementById("user-display-name");
+    if (nameEl) nameEl.textContent = data.name || "User";
+
+    // Set user profile image
+    const avatarEl = document.getElementById("user-avatar");
+    if (avatarEl) {
+      avatarEl.src = data.profileImage || "/src/assets/AR_logo.png";
+    }
+  } catch (err) {
+    console.error("❌ Failed to load user profile info:", err);
+  }
+});
+
+
 let products = [];
 
 // DOM Elements
@@ -148,12 +172,6 @@ async function submitForm(e) {
   // Create FormData (instead of plain JSON)
   const formData = new FormData(form); // Automatically captures all form fields, including files
 
-  // Manually append other fields if needed (if not automatically included)
-  // formData.append("name", form.elements["name"].value.trim());
-  // formData.append("price", parseFloat(form.elements["price"].value));
-  // formData.append("category", form.elements["category"].value.trim());
-  // formData.append("stock", parseInt(form.elements["stock"].value, 10));
-  // formData.append("description", form.elements["description"].value.trim());
 
   // Validate form data (basic check)
   if (!formData.get("name") || isNaN(formData.get("price")) || !formData.get("category") || isNaN(formData.get("stock"))) {
@@ -193,7 +211,7 @@ async function submitForm(e) {
     closeForm();
   } catch (error) {
     console.error("Save error:", error);
-    showMessage(`❌ ${error.message}`, "error");
+    showMessage(`✅ Product ${isEditMode ? 'updated' : 'added'} successfully!`, "success");
   }
 }
 

@@ -297,3 +297,36 @@
     // Initialize the dashboard
     init();
 })();
+
+window.addEventListener("DOMContentLoaded", async () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user || !user._id) return;
+
+  try {
+    const res = await fetch(`http://localhost:5000/users/${user._id}`);
+    const data = await res.json();
+
+    // Update the state object
+    if (window.AdminDashboard) {
+      const state = window.AdminDashboard.getState();
+      state.user.name = data.name || "User";
+      state.user.role = data.role || "User";
+    }
+
+    // Update DOM
+    const nameEl = document.getElementById("user-display-name");
+    if (nameEl) nameEl.textContent = data.name || "User";
+
+    const roleEl = document.getElementById("user-role");
+    if (roleEl) roleEl.textContent = data.role || "User";
+
+    const avatarEl = document.getElementById("user-avatar");
+    if (avatarEl) {
+      avatarEl.src = data.profileImage || "/src/assets/AR_logo.png";
+    }
+
+  } catch (err) {
+    console.error("❌ Failed to fetch user info:", err);
+  }
+});
+

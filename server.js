@@ -26,6 +26,7 @@ const io = new Server(server, {
 // Models
 const User = require("./models/User");
 const Order = require("./models/Order");
+const userRoutes = require("./routes/users"); 
 
 // Routes
 const productRoutes = require("./routes/products");
@@ -37,6 +38,7 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+app.use("/users", userRoutes);  
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI || "mongodb+srv://codeandescape:maddyanna12@cluster0.cjlsm6y.mongodb.net/?retryWrites=true&w=majority&appName=cluster0")

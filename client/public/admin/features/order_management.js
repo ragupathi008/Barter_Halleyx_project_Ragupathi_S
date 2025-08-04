@@ -8,9 +8,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Load user info
     const user = JSON.parse(localStorage.getItem('user'));
-    if (user?.name) {
-      document.getElementById('user-display-name').textContent = user.name;
-    }
+
+if (user) {
+  // ✅ Set display name
+  if (user.name) {
+    const nameEl = document.getElementById('user-display-name');
+    if (nameEl) nameEl.textContent = user.name;
+  }
+
+  // ✅ Set profile image
+  if (user.profileImage) {
+    const imgEl = document.getElementById('user-profile-image');
+    if (imgEl) imgEl.src = user.profileImage;
+  }
+}
+
 
     // Current orders state
     let orders = [];

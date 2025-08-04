@@ -27,6 +27,30 @@ async function loadUsers() {
     console.error("Error fetching users:", err);
   }
 }
+document.addEventListener("DOMContentLoaded", async () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user || !user._id) return;
+
+  try {
+    // ✅ FIXED: Added "/" before user._id in the URL
+    const res = await fetch(`http://localhost:5000/users/${user._id}`);
+    const data = await res.json();
+
+    // ✅ Set user name
+    document.getElementById("user-display-name").textContent = data.name || "User";
+
+    // ✅ Set profile image with fallback
+    const avatar = document.getElementById("user-profile-image");
+    avatar.src = data.profileImage && data.profileImage !== ""
+      ? data.profileImage
+      : "/src/assets/AR_logo.png";
+
+  } catch (err) {
+    console.error("Failed to fetch user info:", err);
+  }
+});
+
+
 
 // OPEN ADD USER MODAL
 function openAddUserModal() {
