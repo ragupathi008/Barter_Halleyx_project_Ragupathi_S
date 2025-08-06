@@ -158,24 +158,62 @@ function removeFromCart(index) {
   renderCart();
 }
 
-function checkout() {
-  const cart = getCartItems();
-  if (cart.length === 0) {
-    alert("🛒 Cart is empty!");
-    return;
-  }
+// In cart.js - modify the checkout function
+async function checkout() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart.length === 0) return alert("🛒 Your cart is empty!");
 
-  // Create form dynamically
-  const formHtml = `
-    <div id="checkoutForm" class="checkout-form">
-      <h3>Enter Your Details</h3>
-      <label>Name: <input type="text" id="custName" required></label><br>
-      <label>Email: <input type="email" id="custEmail" required></label><br>
-      <button onclick="submitOrder()">Confirm Order</button>
-      <button onclick="document.getElementById('checkoutForm').remove()">Cancel</button>
-    </div>
-  `;
-  document.body.insertAdjacentHTML("beforeend", formHtml);
+  const paymentMethod = getSelectedPaymentMethod();
+  const email = localStorage.getItem("userEmail") || "guest@example.com";
+
+  try {
+    // Get product details from API
+    const res = await fetch("http://localhost:5000/api/products");
+    const allProducts = await res.json();
+
+    // Prepare order items
+    const orderItems = cart.map(item => {
+      const product = allProducts.find(p => p._id === item.productId);
+      return {
+        productId: item.productId,
+        name: product.name,
+        price: product.price,
+        quantity: item.quantity
+      };
+    });
+
+    // Calculate total
+    const total = orderItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    // Prepare order data
+    const orderData = {
+      email,
+      items: orderItems,
+      total,
+      paymentMethod,
+      status: "Pending",
+      placedAt: new Date().toISOString()
+    };
+
+    // Send to server
+    const orderResponse = await fetch("http://localhost:5000/api/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(orderData)
+    });
+
+    if (!orderResponse.ok) throw new Error("Order submission failed");
+
+    // Clear cart and show success
+    localStorage.removeItem("cart");
+    alert("✅ Order placed successfully!");
+    window.location.href = "/client/public/user/dashboard.html"; // Redirect to dashboard or success page
+  } catch (err) {
+    console.error("Checkout error:", err);
+    alert("❌ Failed to place order. Please try again.");
+  }
 }
 
 async function submitOrder() {

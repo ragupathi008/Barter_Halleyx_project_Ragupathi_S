@@ -7,21 +7,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
     
     // Load user info
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem("user"));
+  if (!user || !user._id) return;
 
-if (user) {
-  // ✅ Set display name
-  if (user.name) {
-    const nameEl = document.getElementById('user-display-name');
-    if (nameEl) nameEl.textContent = user.name;
-  }
+  try {
+    // ✅ FIXED: Added "/" before user._id in the URL
+    const res = await fetch(`http://localhost:5000/users/${user._id}`);
+    const data = await res.json();
 
-  // ✅ Set profile image
-  if (user.profileImage) {
-    const imgEl = document.getElementById('user-profile-image');
-    if (imgEl) imgEl.src = user.profileImage;
+    // ✅ Set user name
+    document.getElementById("user-display-name").textContent = data.name || "User";
+
+    // ✅ Set profile image with fallback
+    const avatar = document.getElementById("user-profile-image");
+    avatar.src = data.profileImage && data.profileImage !== ""
+      ? data.profileImage
+      : "/src/assets/AR_logo.png";
+
+  } catch (err) {
+    console.error("Failed to fetch user info:", err);
   }
-}
 
 
     // Current orders state
@@ -39,49 +44,48 @@ if (user) {
 socket.on("new-order", handleNewOrder);  // ✅ this must match the emit in checkout
 socket.on("order-updated", handleOrderUpdated);
 
-   async function loadOrders() {
-  try {
-    const searchTerm = document.getElementById('orderSearch').value;
-    const statusFilter = document.getElementById('statusFilter').value;
-
-    const params = new URLSearchParams();
-    if (searchTerm) params.append('search', searchTerm);
-    if (statusFilter) params.append('status', statusFilter);
-
-    const response = await fetch(`http://localhost:5000/api/orders?${params.toString()}`);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-    orders = await response.json();
-    renderOrders(orders);
-  } catch (error) {
-    console.error('Error loading orders:', error);
-    showNotification('Failed to load orders. Please try again.', 'error');
-  }
-}
-   function renderOrders(orders) {
+     async function loadOrders() {
+      const search = document.getElementById('orderSearch').value;
+      const status = document.getElementById('statusFilter').value;
+      
+      let url = 'http://localhost:5000/api/orders';
+      const params = new URLSearchParams();
+      if (search) params.append('search', search);
+      if (status) params.append('status', status);
+      
+      if (params.toString()) url += `?${params.toString()}`;
+      
+      const res = await fetch(url);
+      orders = await res.json();
+      renderOrders(orders);
+    }
+  
+function renderOrders(orders) {
   const tbody = document.getElementById("ordersBody");
   tbody.innerHTML = "";
 
   orders.forEach(order => {
-    
-    const itemsList = order.items.map(item => 
-      `${item.name} (x${item.quantity})`).join("<br>");
+    const row = document.createElement('tr');
+    row.dataset.orderId = order._id;
 
-   const row = document.createElement('tr');
-          row.innerHTML = `
-            <td data-label="Order ID">${order._id}</td>
-            <td data-label="Customer Email">${order.email}</td>
-            <td data-label="Items">${order.items.map(i => `${i.name} (x${i.quantity})`).join(', ')}</td>
-            <td data-label="Total">₹${order.total}</td>
-            <td data-label="Payment">${order.paymentMethod}</td>
-            <td data-label="Status">${order.status}</td>
-            <td data-label="Placed At">${new Date(order.placedAt).toLocaleString()}</td>
-            <td data-label="Actions">
-              <button class="btn-view">View</button>
-              <button class="btn-edit">Edit</button>
-              <button class="btn-delete">Delete</button>
-            </td>
-          `;
+    row.innerHTML = `
+      <td data-label="Order ID">${order._id}</td>
+      <td data-label="Customer">${order.customerName || order.email || 'N/A'}</td>
+      <td data-label="Items">${
+        Array.isArray(order.items)
+          ? order.items.map(i => typeof i === 'string' ? i : `${i.name} (x${i.quantity})`).join(', ')
+          : ''
+      }</td>
+      <td data-label="Total">₹${order.totalPrice || order.total }</td>
+      <td data-label="Payment">${order.paymentMethod || 'N/A'}</td>
+      <td data-label="Status">${order.status || 'Pending'}</td>
+      <td data-label="Placed At">${new Date(order.placedAt || order.createdAt).toLocaleString()}</td>
+      <td data-label="Actions">
+        <button class="btn-view">View</button>
+        <button class="btn-edit">Edit</button>
+        <button class="btn-delete">Delete</button>
+      </td>
+    `;
 
     tbody.appendChild(row);
   });
