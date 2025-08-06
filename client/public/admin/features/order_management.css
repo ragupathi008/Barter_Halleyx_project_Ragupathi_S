@@ -44,28 +44,51 @@
 /* Orders Table */
 #ordersTable {
   width: 100%;
+  min-width: 600px; /* Minimum width before scrolling kicks in */
   border-collapse: collapse;
   background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
+  table-layout: auto; /* Changed from default to auto for better column sizing */
 }
 
 #ordersTable thead {
   background-color: #4361ee;
   color: white;
+  position: sticky;
+  top: 0; /* Makes header stick during vertical scrolling */
 }
 
 #ordersTable th,
 #ordersTable td {
-  padding: 1rem;
+  padding: 0.75rem 1rem; /* Slightly reduced padding */
   text-align: left;
   border-bottom: 1px solid #e5e5e5;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   color: #333;
+  max-width: 300px; /* Prevent columns from expanding too much */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
+/* Improve responsive behavior */
+@media (max-width: 768px) {
+  .orders-container {
+    border: 1px solid #e5e5e5;
+  }
+  
+  #ordersTable {
+    min-width: 100%;
+  }
+  
+  #ordersTable td {
+    white-space: normal; /* Allow text wrapping on mobile */
+    max-width: none;
+  }
+  
+  /* Keep your existing mobile styles */
+  #ordersTable td::before {
+    flex-basis: 30%; /* Adjust label width */
+  }
+}
 #ordersTable th {
   font-weight: 600;
 }
@@ -164,4 +187,41 @@
     flex-basis: 40%;
     color: #555;
   }
+}
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification.success {
+  background-color: #4CAF50;
+}
+
+.notification.error {
+  background-color: #F44336;
+}
+
+.notification.info {
+  background-color: #2196F3;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Add this container around your table */
+.orders-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }

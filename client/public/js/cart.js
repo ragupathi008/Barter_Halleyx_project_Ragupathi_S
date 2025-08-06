@@ -159,17 +159,30 @@ function removeFromCart(index) {
 }
 
 // In cart.js - modify the checkout function
+// In cart.js - modify the checkout function
 async function checkout() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   if (cart.length === 0) return alert("🛒 Your cart is empty!");
 
-  const paymentMethod = getSelectedPaymentMethod();
-  const email = localStorage.getItem("userEmail") || "guest@example.com";
-
   try {
-    // Get product details from API
-    const res = await fetch("http://localhost:5000/api/products");
-    const allProducts = await res.json();
+    // Get user details
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user || !user._id) {
+      throw new Error("User not authenticated");
+    }
+
+    const userRes = await fetch(`http://localhost:5000/users/${user._id}`, {
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+      }
+    });
+
+    if (!userRes.ok) throw new Error("Failed to fetch user details");
+    const userData = await userRes.json();
+
+    // Get product details
+    const productsRes = await fetch("http://localhost:5000/api/products");
+    const allProducts = await productsRes.json();
 
     // Prepare order items
     const orderItems = cart.map(item => {
@@ -185,12 +198,13 @@ async function checkout() {
     // Calculate total
     const total = orderItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    // Prepare order data
+    // Prepare order data with user details
     const orderData = {
-      email,
+      customerName: userData.name || "Guest",
+      email: userData.email,
       items: orderItems,
       total,
-      paymentMethod,
+      paymentMethod: getSelectedPaymentMethod(),
       status: "Pending",
       placedAt: new Date().toISOString()
     };
@@ -199,7 +213,8 @@ async function checkout() {
     const orderResponse = await fetch("http://localhost:5000/api/orders", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify(orderData)
     });
@@ -209,10 +224,10 @@ async function checkout() {
     // Clear cart and show success
     localStorage.removeItem("cart");
     alert("✅ Order placed successfully!");
-    window.location.href = "/client/public/user/dashboard.html"; // Redirect to dashboard or success page
+    window.location.href = "/client/public/user/dashboard.html";
   } catch (err) {
     console.error("Checkout error:", err);
-    alert("❌ Failed to place order. Please try again.");
+    alert(`❌ Failed to place order: ${err.message}`);
   }
 }
 
